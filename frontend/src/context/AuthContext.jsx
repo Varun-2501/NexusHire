@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 const AuthContext = createContext(null);
 
-const API_BASE = '';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://nexushire-zo1f.onrender.com';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {

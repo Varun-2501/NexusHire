@@ -3,7 +3,7 @@ import axios from 'axios';
 // In dev, Vite proxy forwards /api → localhost:3001
 // So we use relative URLs — no CORS issue at all
 const api = axios.create({
-  baseURL: 'https://nexushhire-production.up.railway.app',
+  baseURL: import.meta.env.VITE_API_URL || 'https://nexushire-zo1f.onrender.com',
   timeout: 30000,
   headers: { 'Content-Type': 'application/json' },
 });

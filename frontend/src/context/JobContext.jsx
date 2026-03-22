@@ -38,7 +38,7 @@ export function JobProvider({ children }) {
       if (f.matchScore && f.matchScore !== 'all') params.set('matchScore', f.matchScore);
       if (u?.email)                              params.set('email',      u.email);
 
-      const BASE = 'https://nexushhire-production.up.railway.app';
+      const BASE = import.meta.env.VITE_API_URL || 'https://nexushire-zo1f.onrender.com';
       const res = await fetch(`${BASE}/api/jobs?${params.toString()}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
